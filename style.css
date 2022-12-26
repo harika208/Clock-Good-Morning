@@ -730,14 +730,14 @@ left: 746px;
     } 
 }
 
- .two1{
+ #two1{
     color:#8E53F0;
     font: normal normal 900 28px/38px Bauhaus Hv BT;
     position: absolute;
     top:26px;
 }
 @media(min-width:300px) and (max-width:800px){
-    .two1{
+    #two1{
         color:#8E53F0;
         font: normal normal 900 28px/38px Bauhaus Hv BT;
         padding-top: 10px;
@@ -764,7 +764,7 @@ left: 746px;
     }
 }
 @media(min-width:300px) and (max-width:800px){
-    .morning{
+    #morning{
         height:300px;
         width: 335px;
     }

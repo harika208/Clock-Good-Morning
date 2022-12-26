@@ -80,51 +80,52 @@ setInterval(() => {
 
 function alaram(){
    
-   let wake = document.getElementsByClassName("last1");
-   let wake1 = document.querySelector("#morn").value;
-   wake[0].innerHTML = `Wake Up Time: ${wake1}`;
-
-   if(wake1 !== "Default"){
-      let image = document.getElementsByClassName("morning");
-        image[0].src = "./wind.jpg";
-        let two12 = document.getElementsByClassName("two1");
-         two12[0].innerText = "GRAB SOME HEALTHY BREAKFAST!!!"
-  }
-
-   let after1 = document.getElementsByClassName("last2");
-   let after12 = document.querySelector("#after").value;
-   after1[0].innerHTML = `Lunch Time: ${after12}`;
-
-      if(after12 !== "Default"){
-      let image = document.getElementsByClassName("morning");
-        image[0].src = "./lunchpic.jpg";
-        let two12 = document.getElementsByClassName("two1");
-        two12[0].innerText = "LET'S HAVE SOME LUNCH !!";
   
-     }
+   let wake = document.getElementsByClassName("last1");
+  wake[0].innerHTML = "Wake Up Time: " + " " + morn.options[morn.selectedIndex].text;
 
-   let even1 = document.getElementsByClassName("last3");
-   let even12 = document.querySelector("#even").value;
-   even1[0].innerHTML = `Nap Time: ${even12}`;
+  let after1 = document.getElementsByClassName("last2");
+  after1[0].innerHTML = "Lunch Time: " + " " + after.options[after.selectedIndex].text;
+  
+  
 
-     if(even12 !== "Default"){
-       let image = document.getElementsByClassName("morning");
-        image[0].src = "./coffee.jpg";
-        let two12 = document.getElementsByClassName("two1");
-         two12[0].innerText = "STOP YAWNING, GET SOME TEA... ITS JUST EVENNG! ";
-    }
-
+  let even1 = document.getElementsByClassName("last3");
+  even1[0].innerHTML = "Nap Time: " + " " + even.options[even.selectedIndex].text;
 
    let night1 = document.getElementsByClassName("last4");
-   let night12 = document.querySelector("#night").value;
-   night1[0].innerHTML = `Night Time: ${night12}`;
-       if(night12 !== "Default"){
-       let image = document.getElementsByClassName("morning");
-      image[0].src = "./goodnigth.jpg";
-      let two12 = document.getElementsByClassName("two1");
-      two12[0].innerText = "CLOSE YOUR EYES AND GO TO SLEEP";
+   night1[0].innerHTML = "Night Time: " + " " + night.options[night.selectedIndex].text;
+ 
+
+  let morn123 = document.getElementById('morn').value;
+  let after123 = document.getElementById('after').value;
+  let even123 = document.getElementById('even').value;
+  let night123 = document.getElementById('night').value;
+
+  let time = new Date();
+  if(time.getHours() == morn123){
+
+    document.getElementById('two1').innerText = "GRAB SOME HEALTHY BREAKFAST!!!";
+    document.getElementById("morning").src = "./wind.jpg";
     }
 
-  
+  else if(time.getHours() == after123){
+
+    document.getElementById('two1').innerText = "LET'S HAVE SOME LUNCH !!";
+    document.getElementById("morning").src = "./lunchpic.jpg";
+    }
+
+   else if(time.getHours() == even123){
+
+    document.getElementById('two1').innerText = "STOP YAWNING, GET SOME TEA... ITS JUST EVENNG! ";
+    document.getElementById("morning").src = "./coffee.jpg";
+    }
+
+  else if(time.getHours() == night123){
+
+    document.getElementById('two1').innerText = "CLOSE YOUR EYES AND GO TO SLEEP";
+    document.getElementById("morning").src = "./goodnigth.jpg";
+  }
+
 }
+   
 alaram();
